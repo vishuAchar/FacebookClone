@@ -1,13 +1,16 @@
-import {View, Image, StyleSheet} from 'react-native';
+import {View, Image, StyleSheet, Text} from 'react-native';
 import React from 'react';
-import FacebookLogo from '../assets/images/fblogo.png';
+import logo from '../assets/images/vym_logo.png';
 import VectorIcon from '../utils/VectorIcon';
 import {Colors} from '../utils/Colors';
 
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Image source={FacebookLogo} style={styles.fbLogoStyle} />
+      <View style={styles.rowCenter}>
+        <Image source={logo} style={styles.fbLogoStyle} />
+        <Text style={styles.logoText}>V Y M</Text>
+      </View>
       <View style={styles.headerIcons}>
         <View style={styles.searchBg}>
           <VectorIcon
@@ -32,9 +35,12 @@ const Header = () => {
 
 const styles = StyleSheet.create({
   fbLogoStyle: {
-    height: 25,
-    width: 130,
+    height: 30,
+    width: 30,
+    marginRight: 10,
   },
+  logoText: {color: Colors.primaryColor, fontSize: 20, fontWeight: '900'},
+  rowCenter: {flexDirection: 'row', alignItems: 'center'},
   searchBg: {
     backgroundColor: Colors.lightgrey,
     height: 35,
