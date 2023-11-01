@@ -1,16 +1,20 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import {Colors} from '../utils/Colors';
+import Member from '../components/Member';
 
 const FriendScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Friend Screen</Text>
-    </View>
+    <ScrollView style={styles.homeContainer}>
+      <Member />
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  homeContainer: {
+    backgroundColor: Colors.background,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
