@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "485401133199",
+    "project_id": "vym-mobile-app-2db5b",
+    "storage_bucket": "vym-mobile-app-2db5b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485401133199:android:d2135bb0462b7dfa4530fa",
+        "android_client_info": {
+          "package_name": "com.facebookclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcspyE1EDC6BPK0mnUzdgDMO2cdwAt_DA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
