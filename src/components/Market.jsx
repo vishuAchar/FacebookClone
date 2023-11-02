@@ -1,17 +1,16 @@
 import {View, StyleSheet, Image} from 'react-native';
 import React from 'react';
 import {Colors} from '../utils/Colors';
-import PostHeader from './PostHeader';
-import PostFooter from './PostFooter';
 import {MembersData} from '../data/MembersData';
-import MemberCard from './MemberCard';
+import MarketCard from './MarketCard';
+import {MarketData} from '../data/MarketData';
 
-const Member = () => {
+const Market = () => {
   return (
     <View style={styles.postContainer}>
-      {MembersData.map(item => (
+      {MarketData.map(item => (
         <View key={item.id} style={styles.card}>
-          <MemberCard data={item} />
+          <MarketCard cardInfo={item} />
           {/* <Image source={item.postImg} style={styles.postImg} /> */}
           {/* <PostFooter data={item} /> */}
         </View>
@@ -23,11 +22,11 @@ const Member = () => {
 const styles = StyleSheet.create({
   postContainer: {
     // backgroundColor: Colors.white,
-    // marginTop: 8,
+    marginTop: 8,
   },
   card: {
     backgroundColor: Colors.white,
-    marginBottom: 8,
+    marginBottom: 12,
     marginHorizontal: 4,
     borderRadius: 10,
   },
@@ -37,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Member;
+export default Market;
