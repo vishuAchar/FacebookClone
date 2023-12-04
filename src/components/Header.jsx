@@ -1,6 +1,7 @@
 import {View, Image, StyleSheet, Text} from 'react-native';
 import React from 'react';
 import logo from '../assets/images/vym_logo.png';
+import add_image from '../assets/images/add-icon.png';
 import VectorIcon from '../utils/VectorIcon';
 import {Colors} from '../utils/Colors';
 
@@ -12,22 +13,15 @@ const Header = () => {
         <Text style={styles.logoText}>V Y M</Text>
       </View>
       <View style={styles.headerIcons}>
-        <View style={styles.searchBg}>
+        <Image source={add_image} style={styles.fbLogoStyle} />
+        {/* <View style={styles.ProfileBg}>
           <VectorIcon
-            name="search"
+            name="user"
             type="FontAwesome5"
-            size={19}
-            color={Colors.grey}
+            size={20}
+            color={Colors.white}
           />
-        </View>
-        <View style={styles.searchBg}>
-          <VectorIcon
-            name="messenger"
-            type="Fontisto"
-            size={22}
-            color={Colors.grey}
-          />
-        </View>
+        </View> */}
       </View>
     </View>
   );
@@ -41,10 +35,24 @@ const styles = StyleSheet.create({
   },
   logoText: {color: Colors.primaryColor, fontSize: 20, fontWeight: '900'},
   rowCenter: {flexDirection: 'row', alignItems: 'center'},
-  searchBg: {
-    backgroundColor: Colors.lightgrey,
+  postBg: {
+    backgroundColor: Colors.primaryColor,
+    height: 35,
+    // width: 5,
+    paddingHorizontal: 5,
+    borderRadius: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: 10,
+  },
+  text: {
+    color: 'white',
+  },
+  ProfileBg: {
+    backgroundColor: Colors.primaryColor,
     height: 35,
     width: 35,
+    paddingHorizontal: 5,
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',

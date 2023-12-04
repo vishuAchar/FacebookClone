@@ -9,7 +9,7 @@ const HomeScreen = () => {
   return (
     <ScrollView style={styles.homeContainer}>
       <SubHeader />
-      <Stories />
+      {/* <Stories /> */}
       <Post />
     </ScrollView>
   );

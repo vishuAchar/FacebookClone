@@ -11,4 +11,6 @@ export const Colors = {
   textColor: '#26282b',
   textGrey: '#989FA7',
   headerIconGrey: '#606770',
+  secondaryColor: '#60A3D9',
+  ternaryColor: '#FFFF5C',
 };
