@@ -8,7 +8,7 @@ import Post from '../components/Post';
 const HomeScreen = () => {
   return (
     <ScrollView style={styles.homeContainer}>
-      <SubHeader />
+      {/* <SubHeader /> */}
       {/* <Stories /> */}
       <Post />
     </ScrollView>

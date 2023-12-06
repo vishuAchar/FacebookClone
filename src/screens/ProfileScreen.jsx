@@ -2,6 +2,7 @@ import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
 import React from 'react';
 import {Colors} from '../utils/Colors';
 import auth from '@react-native-firebase/auth';
+import UserProfileScreen from '../components/UserProfile';
 
 const ProfileScreen = () => {
   const onLogout = () => {
@@ -13,7 +14,8 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profile Screen</Text>
+      {/* <Text style={styles.title}>Profile Screen</Text> */}
+      <UserProfileScreen />
       <TouchableOpacity onPress={onLogout} style={styles.logoutButton}>
         <Text style={styles.logout}>Logout</Text>
       </TouchableOpacity>

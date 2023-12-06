@@ -49,6 +49,7 @@ const PostHeader = ({data}) => {
 const styles = StyleSheet.create({
   postHeaderContainer: {
     padding: 16,
+    // borderTopWidth: 1,
   },
   userProfile: {
     height: 40,

@@ -63,6 +63,8 @@ const styles = StyleSheet.create({
   },
   postFotterContainer: {
     padding: 16,
+    // borderBottomWidth: 1,
+    // marginBottom: 16,
   },
   reactionCount: {
     color: Colors.grey,

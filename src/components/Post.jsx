@@ -7,9 +7,9 @@ import {PostData} from '../data/PostData';
 
 const Post = () => {
   return (
-    <View style={styles.postContainer}>
+    <View style={styles.postOuterContainer}>
       {PostData.map(item => (
-        <View key={item.id}>
+        <View key={item.id} style={styles.postContainer}>
           <PostHeader data={item} />
           <Image source={item.postImg} style={styles.postImg} />
           <PostFooter data={item} />
@@ -22,7 +22,13 @@ const Post = () => {
 const styles = StyleSheet.create({
   postContainer: {
     backgroundColor: Colors.white,
-    marginTop: 8,
+    marginBottom: 8,
+    // borderWidth: 2,
+  },
+  postOuterContainer: {
+    // backgroundColor: Colors.white,
+    // marginTop: 8,
+    // borderWidth: 2,
   },
   postImg: {
     width: '100%',

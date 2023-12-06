@@ -70,7 +70,7 @@ const LoginScreen = ({navigation}) => {
         <TouchableOpacity style={styles.newAccount} onPress={onCreateAccount}>
           <Text style={styles.newAccountText}>Create new account</Text>
         </TouchableOpacity>
-        <Image source={MetaLogo} style={styles.metaLogoStyle} />
+        {/* <Image source={MetaLogo} style={styles.metaLogoStyle} /> */}
       </View>
     </View>
   );
@@ -78,8 +78,8 @@ const LoginScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   logoStyle: {
-    height: 50,
-    width: 50,
+    height: 70,
+    width: 70,
     marginVertical: '20%',
   },
   container: {

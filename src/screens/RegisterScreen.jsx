@@ -90,7 +90,7 @@ const RegisterScreen = ({navigation}) => {
         <TouchableOpacity style={styles.newAccount} onPress={onCreateAccount}>
           <Text style={styles.newAccountText}>Already have an account?</Text>
         </TouchableOpacity>
-        <Image source={MetaLogo} style={styles.metaLogoStyle} />
+        {/* <Image source={MetaLogo} style={styles.metaLogoStyle} /> */}
       </View>
     </View>
   );
@@ -98,8 +98,8 @@ const RegisterScreen = ({navigation}) => {
 
 const styles = StyleSheet.create({
   logoStyle: {
-    height: 50,
-    width: 50,
+    height: 70,
+    width: 70,
     marginVertical: '20%',
   },
   container: {

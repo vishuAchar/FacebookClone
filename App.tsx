@@ -24,7 +24,7 @@ const App = () => {
     <NavigationContainer>
       <StatusBar backgroundColor={Colors.white} barStyle="dark-content" />
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {true ? (
+        {false ? (
           <Stack.Screen name="MainScreen" component={MainScreen} />
         ) : (
           <>
