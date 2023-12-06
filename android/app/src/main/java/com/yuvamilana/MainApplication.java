@@ -1,4 +1,4 @@
-package com.facebookclone;
+package com.yuvamilana;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

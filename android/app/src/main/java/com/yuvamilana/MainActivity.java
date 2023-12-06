@@ -1,4 +1,4 @@
-package com.facebookclone;
+package com.yuvamilana;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

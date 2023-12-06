@@ -94,9 +94,9 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.facebookclone"
+    namespace "com.yuvamilana"
     defaultConfig {
-        applicationId "com.facebookclone"
+        applicationId "com.yuvamilana"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
