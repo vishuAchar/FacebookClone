@@ -11,8 +11,8 @@ import React, {useState} from 'react';
 import VectorIcon from '../utils/VectorIcon';
 import {Colors} from '../utils/Colors';
 import Logo from '../assets/images/logo.png';
-import MetaLogo from '../assets/images/meta-logo.png';
 import auth from '@react-native-firebase/auth';
+import {UserApi} from '../ApiHandler/UserApi';
 
 const RegisterScreen = ({navigation}) => {
   const [fullname, setFullname] = useState('');
@@ -20,30 +20,25 @@ const RegisterScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const onCreateAccount = () => {
-    navigation.navigate('LoginScreen');
+  const onCreateAccount = user => {
+    // navigation.navigate('LoginScreen');
   };
 
-  const onRegister = () => {
+  const onRegister = async () => {
     if (password !== confirmPassword) {
       Alert.alert("Password don't match.");
       return;
     }
     if (email && password) {
-      auth()
-        .createUserWithEmailAndPassword(email, password)
-        .then(() => {
-          console.log('User account created & signed in!');
-        })
-        .catch(error => {
-          if (error.code === 'auth/email-already-in-use') {
-            console.log('That email address is already in use!');
-          }
-          if (error.code === 'auth/invalid-email') {
-            console.log('That email address is invalid!');
-          }
-          console.error(error);
+      try {
+        const user = await UserApi.createUserWithEmailAndPwd({
+          fullname,
+          password,
+          email,
         });
+        console.log('user register', user);
+        onCreateAccount(user);
+      } catch (error) {}
     } else {
       Alert.alert('Please fill in details!');
     }

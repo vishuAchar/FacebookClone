@@ -1,26 +1,36 @@
 {
   "project_info": {
-    "project_number": "485401133199",
-    "project_id": "vym-mobile-app-2db5b",
-    "storage_bucket": "vym-mobile-app-2db5b.appspot.com"
+    "project_number": "156267146565",
+    "project_id": "vym-mobile-app-60673",
+    "storage_bucket": "vym-mobile-app-60673.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:485401133199:android:d2135bb0462b7dfa4530fa",
+        "mobilesdk_app_id": "1:156267146565:android:185d6701ac782d8167e22c",
         "android_client_info": {
           "package_name": "com.yuvamilana"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "156267146565-3fkifvd1l0l793o6eoviea3ceejgugeu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAcspyE1EDC6BPK0mnUzdgDMO2cdwAt_DA"
+          "current_key": "AIzaSyCjscmIPdlruUH352-Rcs741AT6ikNPpOo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156267146565-3fkifvd1l0l793o6eoviea3ceejgugeu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

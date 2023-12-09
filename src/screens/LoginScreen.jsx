@@ -11,8 +11,7 @@ import React, {useState} from 'react';
 import VectorIcon from '../utils/VectorIcon';
 import {Colors} from '../utils/Colors';
 import Logo from '../assets/images/logo.png';
-import MetaLogo from '../assets/images/meta-logo.png';
-import auth from '@react-native-firebase/auth';
+import {UserApi} from '../ApiHandler/UserApi';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -22,21 +21,13 @@ const LoginScreen = ({navigation}) => {
     navigation.navigate('RegisterScreen');
   };
 
-  const onLogin = () => {
+  const onLogin = async () => {
     if (email && password) {
-      auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(response => {
-          console.log('response :', response);
-        })
-        .catch(error => {
-          if (error.code === 'auth/wrong-password') {
-            Alert.alert('Your password is wrong!');
-          } else {
-            Alert.alert(`${error}`);
-          }
-          console.log('error :', error);
-        });
+      const loggedIn = await UserApi.handleLoginWithEmailAndPwd({
+        email,
+        password,
+      });
+      console.log('login', loggedIn);
     }
   };
 
@@ -47,7 +38,7 @@ const LoginScreen = ({navigation}) => {
         type="Ionicons"
         color={Colors.black}
         size={20}
-        onPress={() => navigation.navigate('RegisterScreen')}
+        onPress={() => navigation.navigate('WelcomeScreen')}
       />
       <View style={styles.subContainer}>
         <Image source={Logo} style={styles.logoStyle} />
