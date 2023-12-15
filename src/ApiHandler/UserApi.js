@@ -9,29 +9,34 @@ import {
 import {FIREBASE_AUTH} from '../../firebaseConfig/FirebaseConfig';
 import {Toast} from 'toastify-react-native';
 import {UserStoreApi} from './UserStoreApi';
+import {userRoleEnum} from '../common/CommonEnum';
 
 export const UserApi = {
-  googleSignIn: () => {
+  googleSignIn: async () => {
     try {
-      const provider = new GoogleAuthProvider();
+      const provider = await new GoogleAuthProvider();
       signInWithPopup(FIREBASE_AUTH, provider);
     } catch (error) {}
   },
-  logOut: () => {
+  logOut: async () => {
     try {
-      signOut(FIREBASE_AUTH);
+      await signOut(FIREBASE_AUTH);
     } catch (error) {}
   },
   handleLoginWithEmailAndPwd: async ({email, password}) => {
     try {
+      console.log({email: email, password: password});
       const userCredential = await signInWithEmailAndPassword(
         FIREBASE_AUTH,
         email,
         password,
       );
+      const docId = userCredential?.user?.uid;
+      const userData = await UserStoreApi.getUser(docId);
+      console.log('user cred', {docId, userData});
 
       // You can return user data or a token, depending on your application needs
-      return userCredential.user;
+      return userCredential;
     } catch (error) {
       Toast.error('Error Login !');
     }
@@ -43,11 +48,8 @@ export const UserApi = {
         email,
         password,
       );
-      console.log('user cred', userCredential);
-      //   const {uid, email} = userCredential;
-      const {user} = userCredential;
       const {
-        createdAt,
+        user,
         displayName,
         emailVerified,
         isAnonymous,
@@ -63,21 +65,18 @@ export const UserApi = {
         name: fullname || '',
         email: email,
         isVerified: false,
+        isActive: false,
         createdAt: new Date(),
         displayName: displayName || '',
         emailVerified: emailVerified || false,
-        isAnonymous: isAnonymous || false,
+        isAnonymous: true,
         lastLoginAt: lastLoginAt || new Date(),
         phoneNumber: phoneNumber || '',
         photoURL: photoURL || '',
-        // userInfo: user,
+        userRole: userRoleEnum.GUEST,
       };
-
-      console.log('user data', userData);
       const updateUser = await UserStoreApi.createUserUsingId(userId, userData);
-      // You can return user data or a token, depending on your application needs
       return updateUser;
-      // Get a list of cities from your database
     } catch (error) {
       let errorMsg;
       if (error.code === 'auth/email-already-in-use') {

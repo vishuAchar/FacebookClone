@@ -21,10 +21,15 @@ const RegisterScreen = ({navigation}) => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const onCreateAccount = user => {
-    // navigation.navigate('LoginScreen');
+    navigation.navigate('LoginScreen');
   };
 
   const onRegister = async () => {
+    const isAllFilled = fullname && email && password && confirmPassword;
+    if (!isAllFilled) {
+      Alert.alert('Fill all the fields');
+      return;
+    }
     if (password !== confirmPassword) {
       Alert.alert("Password don't match.");
       return;
@@ -36,7 +41,6 @@ const RegisterScreen = ({navigation}) => {
           password,
           email,
         });
-        console.log('user register', user);
         onCreateAccount(user);
       } catch (error) {}
     } else {

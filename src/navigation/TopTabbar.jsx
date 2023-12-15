@@ -1,12 +1,32 @@
-import React from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import VectorIcon from '../utils/VectorIcon';
 import {Colors} from '../utils/Colors';
 import {TabData} from '../data/TabData';
+import {GlobalContext} from '../context/GlobalContext';
 
 const Tab = createMaterialTopTabNavigator();
 
 const TopTabbar = () => {
+  const {user, userInfo, userPermission} = useContext(GlobalContext);
+  const [allowedRoutes, setAllowedRoute] = useState([]);
+
+  const createRoute = () => {
+    const routes = [];
+    TabData.forEach(tab => {
+      if (userPermission[tab.name]) {
+        routes.push(tab);
+      }
+    });
+    setAllowedRoute(routes);
+  };
+
+  useEffect(() => {
+    if (userPermission) {
+      createRoute();
+    }
+  }, [userPermission]);
+
   return (
     <Tab.Navigator
       screenOptions={() => ({
@@ -18,6 +38,7 @@ const TopTabbar = () => {
         <Tab.Screen
           key={tab.id}
           name={tab.name}
+          initialParams={{title: tab.name}}
           component={tab.route}
           options={{
             tabBarIcon: ({color, focused}) => (

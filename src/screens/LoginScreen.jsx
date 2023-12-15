@@ -22,12 +22,16 @@ const LoginScreen = ({navigation}) => {
   };
 
   const onLogin = async () => {
-    if (email && password) {
-      const loggedIn = await UserApi.handleLoginWithEmailAndPwd({
-        email,
-        password,
-      });
-      console.log('login', loggedIn);
+    try {
+      if (email && password) {
+        const loggedIn = await UserApi.handleLoginWithEmailAndPwd({
+          email,
+          password,
+        });
+        //  const userDocId = loggedIn
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 

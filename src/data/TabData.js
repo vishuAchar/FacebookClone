@@ -9,7 +9,7 @@ export const TabData = [
   {
     id: 1,
     route: HomeScreen,
-    name: 'Home',
+    name: 'home',
     activeIconName: 'home',
     activeiconType: 'Entypo',
     inactiveIconName: 'home-outline',
@@ -20,7 +20,7 @@ export const TabData = [
   {
     id: 2,
     route: FriendScreen,
-    name: 'Friends',
+    name: 'friends',
     activeIconName: 'people-sharp',
     activeiconType: 'Ionicons',
     inactiveIconName: 'people-outline',
@@ -31,7 +31,7 @@ export const TabData = [
   {
     id: 3,
     route: WatchScreen,
-    name: 'Watch',
+    name: 'watch',
     activeIconName: 'youtube-tv',
     activeiconType: 'MaterialCommunityIcons',
     inactiveIconName: 'television-play',
@@ -42,7 +42,7 @@ export const TabData = [
   {
     id: 4,
     route: MarketPlaceScreen,
-    name: 'MarketPlace',
+    name: 'marketPlace',
     activeIconName: 'shop',
     activeiconType: 'Entypo',
     inactiveIconName: 'storefront-outline',
@@ -53,7 +53,7 @@ export const TabData = [
   {
     id: 5,
     route: NotificationScrren,
-    name: 'Notification',
+    name: 'notification',
     activeIconName: 'notifications',
     activeiconType: 'Ionicons',
     inactiveIconName: 'notifications-outline',
@@ -64,7 +64,7 @@ export const TabData = [
   {
     id: 6,
     route: ProfileScreen,
-    name: 'Profile',
+    name: 'profile',
     activeIconName: 'person',
     activeiconType: 'Ionicons',
     inactiveIconName: 'person-outline',
